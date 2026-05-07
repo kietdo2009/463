@@ -1,21 +1,19 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
-export default function CheckoutPage() {
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    email: "customer@example.com",
-    firstName: "John",
-    lastName: "Smith",
-    address: "123 Fashion Avenue",
-    apartment: "Suite 4B",
-    city: "New York",
-    state: "NY",
-    zipCode: "10001",
-    phone: "(555) 123-4567",
-    cardNumber: "4532 1234 5678 9010",
-    expiryDate: "12/28",
-    cvv: "123",
+const [formData, setFormData] = useState({
+    email: "",
+    firstName: "",
+    lastName: "",
+    address: "",
+    apartment: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    phone: "",
+    cardNumber: "",
+    expiryDate: "",
+    cvv: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
