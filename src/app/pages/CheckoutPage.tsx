@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
-const [formData, setFormData] = useState({
+export default function CheckoutPage() {
+  const navigate = useNavigate();
+  
+  // Set all initial states to empty strings instead of presets
+  const [formData, setFormData] = useState({
     email: "",
     firstName: "",
     lastName: "",
@@ -29,7 +33,7 @@ const [formData, setFormData] = useState({
   };
 
   return (
-    <div className="container mx-auto px-6 py-12 max-w-4xl">
+    <div className="container mx-auto px-6 py-12 max-w-4xl border-4 border-red-500">
       <h1 className="text-6xl mb-12 text-center">
         CHECKOUT
       </h1>
@@ -80,6 +84,7 @@ const [formData, setFormData] = useState({
                   value={formData.firstName}
                   onChange={handleChange}
                   className="w-full px-6 py-4 text-xl border-4 border-black focus:outline-none focus:ring-4 focus:ring-black"
+                  placeholder="John"
                 />
               </div>
               <div>
@@ -94,6 +99,7 @@ const [formData, setFormData] = useState({
                   value={formData.lastName}
                   onChange={handleChange}
                   className="w-full px-6 py-4 text-xl border-4 border-black focus:outline-none focus:ring-4 focus:ring-black"
+                  placeholder="Smith"
                 />
               </div>
             </div>
@@ -110,6 +116,7 @@ const [formData, setFormData] = useState({
                 value={formData.address}
                 onChange={handleChange}
                 className="w-full px-6 py-4 text-xl border-4 border-black focus:outline-none focus:ring-4 focus:ring-black"
+                placeholder="123 Fashion Avenue"
               />
             </div>
 
@@ -124,6 +131,7 @@ const [formData, setFormData] = useState({
                 value={formData.apartment}
                 onChange={handleChange}
                 className="w-full px-6 py-4 text-xl border-4 border-black focus:outline-none focus:ring-4 focus:ring-black"
+                placeholder="Suite 4B"
               />
             </div>
 
@@ -140,6 +148,7 @@ const [formData, setFormData] = useState({
                   value={formData.city}
                   onChange={handleChange}
                   className="w-full px-6 py-4 text-xl border-4 border-black focus:outline-none focus:ring-4 focus:ring-black"
+                  placeholder="New York"
                 />
               </div>
               <div>
@@ -154,6 +163,7 @@ const [formData, setFormData] = useState({
                   value={formData.state}
                   onChange={handleChange}
                   className="w-full px-6 py-4 text-xl border-4 border-black focus:outline-none focus:ring-4 focus:ring-black"
+                  placeholder="NY"
                 />
               </div>
               <div>
@@ -168,6 +178,7 @@ const [formData, setFormData] = useState({
                   value={formData.zipCode}
                   onChange={handleChange}
                   className="w-full px-6 py-4 text-xl border-4 border-black focus:outline-none focus:ring-4 focus:ring-black"
+                  placeholder="10001"
                 />
               </div>
             </div>
@@ -248,7 +259,7 @@ const [formData, setFormData] = useState({
         </section>
 
         {/* Order Summary */}
-        <section className="bg-black text-white p-10">
+        <section className="bg-black text-white p-10 border-4 border-black">
           <h2 className="text-4xl mb-8 border-b-4 border-white pb-4">
             Order Summary
           </h2>
